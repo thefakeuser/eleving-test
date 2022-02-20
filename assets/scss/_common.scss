@@ -1,0 +1,108 @@
+html {
+  font-size: 10px;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-grow {
+  flex: 1
+}
+
+#__nuxt,
+#__layout,
+.ev-page {
+  min-height: 100vh;
+  height: auto;
+}
+
+$flex-directions: (
+  "row",
+  "row-reverse",
+  "column",
+  "column-reverse"
+);
+
+$flex-vertical-align: (
+  "start",
+  "center",
+  "flex-end"
+);
+
+$flex-horizontal-align: (
+  "start",
+  "center",
+  "end",
+  "space-between",
+  "space-around"
+);
+
+$text-sizes: (
+  "lg": "4.8rem",
+  "heading": "2.8rem",
+  "subtitle": "2.4rem",
+  "regular": "1.8rem"
+);
+
+$text-colors: (
+  "primary": $primary-color,
+  "secondary": $secondary-color,
+  "main": $main-color,
+  "white": $white-color,
+  "light": $light-color,
+  "disabled": $disabled-color,
+  "grey": $grey-color
+);
+
+$font-types: (
+  "Regular": "regular",
+  "Bold": "bold"
+);
+
+@each $type, $weight in $font-types {
+  .font-weight-#{$weight} {
+    font-family: "Open Sans #{$type}", sans-serif;
+  }
+}
+
+@each $name, $size in $text-sizes {
+  .text-#{$name} {
+    font-size: #{$size};
+  }
+}
+
+@each $name, $size in $text-sizes {
+  .text-#{$name} {
+    font-size: #{$size};
+  }
+}
+
+@each $color, $var in $text-colors {
+  .#{$color}--text {
+    color: #{$var};
+  }
+}
+
+@each $direction in $flex-vertical-align {
+  .align-#{$direction}{
+    align-items: #{$direction};
+  }
+}
+
+@each $direction in $flex-horizontal-align {
+  .justify-#{$direction}{
+    justify-content: #{$direction};
+  }
+}
+
+@each $direction in $flex-directions {
+  .flex-#{$direction}{
+    flex-direction: #{$direction};
+  }
+}
